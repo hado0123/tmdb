@@ -1,4 +1,3 @@
-import { Provider } from 'react-redux'
 // import MovieList from './components/NonRedux/MovieList'
 import MovieList from './components/UseRedux/MovieList'
 
