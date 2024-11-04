@@ -2,18 +2,13 @@ import axios from 'axios'
 
 // TMDB API 기본 URL과 API 키 설정
 const BASE_URL = 'https://api.themoviedb.org/3'
-const API_KEY = 'YOUR_TMDB_API_KEY' // TMDB에서 발급받은 API 키
+const AUTH_KEY = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ZDI5ZmIzYTNiOGFkZjkzYzNkNTQxNDU4OTczNzA0OSIsIm5iZiI6MTczMDUzNTYxOC41NTE3OTcyLCJzdWIiOiI2MjRkNDM0MWMzOTI2NjAwNGY5Mjk4YmUiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.O5nRjv35TxNUAD_5FX1de7mEJhnIZt5qv3f4dCT7Pi4'
 
 const options = {
    method: 'GET',
    headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ZDI5ZmIzYTNiOGFkZjkzYzNkNTQxNDU4OTczNzA0OSIsIm5iZiI6MTczMDUzNTYxOC41NTE3OTcyLCJzdWIiOiI2MjRkNDM0MWMzOTI2NjAwNGY5Mjk4YmUiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.O5nRjv35TxNUAD_5FX1de7mEJhnIZt5qv3f4dCT7Pi4',
-   },
-   params: {
-      language: 'ko-KR',
-      page: 1,
-      region: 'KR',
+      Authorization: AUTH_KEY,
    },
 }
 
@@ -23,7 +18,7 @@ const tmdbApi = axios.create({
 })
 
 // API를 통해 영화 목록을 가져오는 함수
-export const getMovies = async (page = 1, filters = {}) => {
+export const getMovies = async (page = 1) => {
    // const response = await tmdbApi.get('/movie/popular', {
    //    params: {
    //       page,
@@ -31,7 +26,14 @@ export const getMovies = async (page = 1, filters = {}) => {
    //    },
    // })
 
-   const response = await tmdbApi.get('/movie/popular', options)
+   const response = await tmdbApi.get('/movie/popular', {
+      ...options,
+      params: {
+         language: 'ko-KR',
+         page, //page: page
+         region: 'KR',
+      },
+   })
    return response
 }
 
