@@ -2,7 +2,7 @@ import axios from 'axios'
 
 // TMDB API 기본 URL과 API 키 설정
 const BASE_URL = 'https://api.themoviedb.org/3'
-const AUTH_KEY = process.env.REACT_APP_TMDB_API_KEY
+const AUTH_KEY = process.env.TMDB_API_KEY
 
 // axios 인스턴스 생성
 const tmdbApi = axios.create({
