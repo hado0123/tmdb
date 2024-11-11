@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Box } from '@mui/material'
+import Button from '@mui/material/Button'
 
 export default function MUI7_2() {
    // 상태를 이용해 버튼의 크기를 제어
@@ -12,11 +12,11 @@ export default function MUI7_2() {
    }
 
    return (
-      <Box sx={{ textAlign: 'center', mt: 4 }}>
+      <>
          {/* 상태에 따라 버튼 크기가 'medium' 또는 'large'로 변경됨 */}
          <Button variant="contained" size={size} onClick={handleClick}>
             Toggle Size
          </Button>
-      </Box>
+      </>
    )
 }

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchMovies } from '../../features/movies/moviesSlice'
+import { fetchMovies } from '../../features/moviesSlice'
 
 const MoviesList = () => {
    const dispatch = useDispatch()

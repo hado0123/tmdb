@@ -10,7 +10,7 @@ import { Button } from '@mui/material'
 const theme = createTheme({
    palette: {
       primary: {
-         main: '#1976d2', // 기본 파란색
+         main: '#000', // 기본 검은색
       },
       secondary: {
          main: '#dc004e', // 기본 빨간색

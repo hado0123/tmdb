@@ -6,15 +6,9 @@ import Button from '@mui/material/Button'
 function MUI2_1() {
    return (
       <div>
-         <Button className="btn1" variant="text">
-            Text
-         </Button>
-         <Button className="btn2" variant="contained">
-            Contained
-         </Button>
-         <Button className="btn3" variant="outlined">
-            Outlined
-         </Button>
+         <Button className="btn1">Text</Button>
+         <Button className="btn2">Contained</Button>
+         <Button className="btn3">Outlined</Button>
       </div>
    )
 }

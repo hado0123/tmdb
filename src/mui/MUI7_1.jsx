@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Box } from '@mui/material'
+import Button from '@mui/material/Button'
 
 export default function MUI7_1() {
    // 상태를 이용해 버튼의 색상을 제어
@@ -11,11 +11,11 @@ export default function MUI7_1() {
    }
 
    return (
-      <Box sx={{ textAlign: 'center', mt: 4 }}>
+      <>
          {/* 상태에 따라 버튼 색상이 'primary' 또는 'secondary'로 변경됨 */}
          <Button variant="contained" color={color} onClick={handleClick}>
             Toggle Color
          </Button>
-      </Box>
+      </>
    )
 }
